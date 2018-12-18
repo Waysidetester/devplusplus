@@ -51,7 +51,7 @@ class App extends Component {
     return (
         <div className="App">
           <MyNav authState={this.state.authed} logout={logout}/>
-          <GithubUser username={this.state.github_user}/>
+          <GithubUser username={this.state.github_user} authState={this.state.authed}/>
           <AddInterest />
           <InterestDetail />
         </div>
