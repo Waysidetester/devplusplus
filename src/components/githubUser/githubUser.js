@@ -46,7 +46,7 @@ static propTypes = {
       return(
         <UserDetail
         userImage={this.state.ghUser.avatar_url}
-        userBio={this.state.ghUser.avatar_url}
+        userBio={this.state.ghUser.bio}
         username={this.props.username}
         userUrl={this.state.ghUser.url}
         userCommits={this.state.commits}

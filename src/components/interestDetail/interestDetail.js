@@ -21,19 +21,20 @@ class InterestDetail extends React.Component {
 
   render() {
     const details = () => {
-      let domString = ''
+      let domString = '';
       $.each(this.state.items, (key, value) => {
-        domString += `
-        <p>${value.title}</p>
-        <p><a href="${value.link}">${value.link}</a></p>
-        <button className="btn btn-danger">X</button>
-        `
-      })
-      return domString
-    }
-    if (this.props.authState) {
-      console.log('items', this.state.items);
-      details();
+        console.log(value);
+        domString +=<div>
+          <p>{value.title}</p>
+          <p><a href={value.link}>{value.link}</a></p>
+          <button className="btn btn-danger">X</button>
+        </div>
+      });
+      
+      return <div>{domString}</div>;
+    };
+
+    if (this.state.items !== undefined) {
       return(
       <div>
         <h2>Interest Detail section</h2>
