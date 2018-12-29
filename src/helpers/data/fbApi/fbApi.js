@@ -16,4 +16,11 @@ const getFBData = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getFBData };
+const updateTrackedItem = (key, item) => new Promise(() => {
+  axios.put(`https://devplusplus-fd23c.firebaseio.com/tracker/${key}.json`, item)
+    .catch((err) => {
+      console.error(err);
+    });
+});
+
+export default { getFBData, updateTrackedItem };

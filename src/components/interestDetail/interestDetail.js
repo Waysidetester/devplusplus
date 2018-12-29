@@ -13,20 +13,37 @@ class InterestDetail extends React.Component {
     items: [],
   }
 
-  componentDidMount() {
-    fbApi.getFBData().then((data) => {
-      this.setState({ items: data });
-    })
-  }
+  getTasks = () => { fbApi.getFBData().then((data) => {
+    this.setState({ items: data });
+  })}
 
+  componentDidMount() {
+    this.getTasks()
+  }
+  
   render() {
     const { items } = this.state;
+    
+    const updateIsComplete = (id, bool) => {
+      const newState = [ ...items ];
+      items.forEach((item, i) => {
+        if (item.id === id) {
+          item.isComplete = bool;
+          newState[i] = item;
+          console.log(newState);
+          this.setState({ items: newState })
+        }
+      })
+    };
+
     const details = items.map(item => (
       <InterestItem
       key={item.id}
+      id={item.id}
       title={item.title}
       link={item.link}
       isComplete={item.isComplete}
+      updateIsComplete={updateIsComplete}
       />
     ))
 
