@@ -12,6 +12,7 @@ import './App.scss';
 class App extends Component {
   state = {
     authed: false,
+    github_user: '',
   }
 
   componentDidMount() {
@@ -28,11 +29,15 @@ class App extends Component {
   render() {
     const login = () => {
       authHelpers.githubAuth()
+        .then((res) => {
+          this.setState({ github_user: res.additionalUserInfo.username });
+        })
         .catch(err => console.error('authentication errored', err));
     };
 
     const logout = () => {
       authHelpers.signOut();
+      this.setState({ github_user: '' })
     };
 
     if (!this.state.authed) {
@@ -46,9 +51,9 @@ class App extends Component {
     return (
         <div className="App">
           <MyNav authState={this.state.authed} logout={logout}/>
-          <GithubUser />
+          <GithubUser username={this.state.github_user} authState={this.state.authed}/>
           <AddInterest />
-          <InterestDetail />
+          <InterestDetail authState={this.state.authed}/>
         </div>
     );
   }
