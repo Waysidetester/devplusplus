@@ -23,4 +23,15 @@ const updateTrackedItem = (key, item) => new Promise(() => {
     });
 });
 
-export default { getFBData, updateTrackedItem };
+const addTrackedItem = item => new Promise(() => {
+  axios.post(`https://devplusplus-fd23c.firebaseio.com/tracker.json`, item)
+    .catch((err) => {
+      console.error(err);
+    })
+})
+
+export default {
+  getFBData,
+  updateTrackedItem,
+  addTrackedItem,
+};
