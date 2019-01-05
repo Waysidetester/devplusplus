@@ -44,18 +44,22 @@ static propTypes = {
     
     if (this.props.username) {
       return(
-        <UserDetail
-        userImage={this.state.ghUser.avatar_url}
-        userBio={this.state.ghUser.bio}
-        username={this.props.username}
-        userUrl={this.state.ghUser.url}
-        userCommits={this.state.commits}
-        />
+        <div className='github-user'>
+          <UserDetail
+          userImage={this.state.ghUser.avatar_url}
+          userBio={this.state.ghUser.bio}
+          username={this.props.username}
+          userUrl={this.state.ghUser.url}
+          userCommits={this.state.commits}
+          />
+        </div>
       )
     }
 
     return (
+      <div className='github-user'>
         <h2>Github User section</h2>
+      </div>
     );
   }
 }

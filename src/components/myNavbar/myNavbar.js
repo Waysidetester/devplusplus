@@ -30,6 +30,7 @@ class MyNav extends React.Component {
     return (
       <div>
         <Navbar color="dark" dark expand="md">
+        <div className='container'>
           <NavbarBrand href="/">Dev++</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -39,6 +40,7 @@ class MyNav extends React.Component {
               </NavItem>
             </Nav>
           </Collapse>
+          </div>
         </Navbar>
       </div>
     );

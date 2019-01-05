@@ -106,8 +106,10 @@ class InterestDetail extends React.Component {
         <button onClick={selectedInterest}>Blog</button>
         <button onClick={selectedInterest}>Resource</button>
         <button onClick={selectedInterest}>Podcast</button>
-        {incompleteDetails}
-        {completeDetails}
+        <div className='interest-container'>
+          {incompleteDetails}
+          {completeDetails}
+        </div>
       </div>
       )
     }

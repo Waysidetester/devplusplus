@@ -42,7 +42,7 @@ class addInterest extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='add-interest'>
         <h2>Add Interest section</h2>
         <FormGroup>
           <Input
@@ -62,54 +62,58 @@ class addInterest extends React.Component {
           onChange={(e) => {this.updateTask('link', e)}}
           />
         </FormGroup>
-        <FormGroup >
-            <Label check>
-              <Input
-              type="radio"
-              name="radio1"
-              value="Tutorial"
-              onChange={(e) => {this.updateTask('type', e)}}
-              />{'Tutorial'}
-              
-            </Label>
-          </FormGroup>
+        <div className='select-type'>
           <FormGroup check>
-            <Label check>
-              <Input
-              type="radio"
-              name="radio1"
-              value="Blog"
-              onChange={(e) => {this.updateTask('type', e)}}
-              />{'Blog'}
-              
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input
-              type="radio"
-              name="radio1"
-              value="Resource"
-              onChange={(e) => {this.updateTask('type', e)}}
-              />{'Resource'}
-              
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input
-              type="radio"
-              name="radio1"
-              value="Podcast"
-              onChange={(e) => {this.updateTask('type', e)}}
-              />{'Podcast'}
-              
-            </Label>
-          </FormGroup>
+              <Label check>
+                <Input
+                type="radio"
+                name="radio1"
+                value="Tutorial"
+                onChange={(e) => {this.updateTask('type', e)}}
+                />{'Tutorial'}
+                
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input
+                type="radio"
+                name="radio1"
+                value="Blog"
+                onChange={(e) => {this.updateTask('type', e)}}
+                />{'Blog'}
+                
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input
+                type="radio"
+                name="radio1"
+                value="Resource"
+                onChange={(e) => {this.updateTask('type', e)}}
+                />{'Resource'}
+                
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input
+                type="radio"
+                name="radio1"
+                value="Podcast"
+                onChange={(e) => {this.updateTask('type', e)}}
+                />{'Podcast'}
+                
+              </Label>
+            </FormGroup>
+          </div>
+          <div className='submit-task'>
           <button
           className="btn btn-success"
           onClick={this.addTaskToDatabase}
           >Submit</button>
+          </div>
       </div>
     );
   }
