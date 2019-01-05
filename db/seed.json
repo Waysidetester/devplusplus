@@ -4,7 +4,7 @@
       "title": "title1",
       "link": "https://www.bing.com/",
       "type": "Tutorial",
-      "isComplete": false
+      "isComplete": true
     },
     "task2": {
       "title": "title2",
@@ -27,7 +27,7 @@
     "task5": {
       "title": "title5",
       "link": "https://www.bing.com/",
-      "type": "tutorial",
+      "type": "Tutorial",
       "isComplete": false
     }
   }

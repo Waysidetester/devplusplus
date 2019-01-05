@@ -5,6 +5,7 @@ import {
   Input,
 } from 'reactstrap';
 import fbApi from '../../helpers/data/fbApi/fbApi';
+import PropTypes from 'prop-types';
 import './addInterest.scss';
 
 
@@ -16,6 +17,10 @@ const defaultTask = {
 };
 
 class addInterest extends React.Component {
+  static propTypes = {
+    updateInterest: PropTypes.func
+  }
+  
   state = {
     newTask : defaultTask
   }
@@ -28,7 +33,8 @@ class addInterest extends React.Component {
 
   addTaskToDatabase = () => {
     if (this.state.newTask.title && this.state.newTask.link && this.state.newTask.type) {
-      fbApi.addTrackedItem(this.state.newTask);
+      fbApi.addTrackedItem(this.state.newTask)
+          this.props.updateInterest()
     } else {
       console.log('empty string');
     }

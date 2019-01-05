@@ -30,8 +30,19 @@ const addTrackedItem = item => new Promise(() => {
     })
 })
 
+const deleteTrackedItem = key => new Promise((resolve, reject) => {
+  axios.delete(`https://devplusplus-fd23c.firebaseio.com/tracker/${key}.json`)
+    .then((res) => {
+      resolve(res);
+    })
+    .catch((err) => {
+      reject(err);
+    })
+  });
+
 export default {
   getFBData,
   updateTrackedItem,
   addTrackedItem,
+  deleteTrackedItem,
 };

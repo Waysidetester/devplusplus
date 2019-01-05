@@ -13,7 +13,16 @@ class App extends Component {
   state = {
     authed: false,
     github_user: '',
+    addedInterest: false,
   }
+
+  updateInterest = () => {
+    if (this.state.addedInterest) {
+      this.setState({ addedInterest: true });
+    } else {
+      this.setState({ addedInterest: false });
+    }
+  };
 
   componentDidMount() {
     connection();
@@ -52,8 +61,11 @@ class App extends Component {
         <div className="App">
           <MyNav authState={this.state.authed} logout={logout}/>
           <GithubUser username={this.state.github_user} authState={this.state.authed}/>
-          <AddInterest />
-          <InterestDetail authState={this.state.authed}/>
+          <AddInterest updateInterest={this.updateInterest}/>
+          <InterestDetail
+          authState={this.state.authed}
+          addedInterest={this.state.addedInterest}
+          />
         </div>
     );
   }
