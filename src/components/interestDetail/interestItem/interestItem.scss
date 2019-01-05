@@ -1,0 +1,19 @@
+.delete-icon {
+  height: 25px;
+  width: 25px;
+  margin: 0 10px;
+}
+
+.single-interest {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #000;
+}
+
+.single-interest:last-of-type {
+  border-bottom: none;
+}
+
+.single-interest:first-of-type {
+  padding-top: 20px;
+}

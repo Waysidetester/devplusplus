@@ -60,12 +60,22 @@ class App extends Component {
     return (
         <div className="App">
           <MyNav authState={this.state.authed} logout={logout}/>
-          <GithubUser username={this.state.github_user} authState={this.state.authed}/>
-          <AddInterest updateInterest={this.updateInterest}/>
-          <InterestDetail
-          authState={this.state.authed}
-          addedInterest={this.state.addedInterest}
-          />
+          <div className='container'>
+          <div className='row'>
+            <div className='col-4'>
+              <GithubUser username={this.state.github_user} authState={this.state.authed}/>
+            </div>
+            <div className='col'>
+              <AddInterest updateInterest={this.updateInterest}/>
+              <div className='interest-detail'>
+                <InterestDetail
+                authState={this.state.authed}
+                addedInterest={this.state.addedInterest}
+                />
+              </div>
+            </div>
+          </div>
+          </div>
         </div>
     );
   }

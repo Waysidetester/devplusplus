@@ -14,7 +14,7 @@ class UserDetail extends React.Component {
   render() {
     return (
         <div>
-          <img src={this.props.userImage} alt={this.props.username}/>
+          <img className='github-picture' src={this.props.userImage} alt={this.props.username}/>
           <p>{this.props.userBio}</p>
           <p><a href={this.props.userUrl}>My Github Profile!</a></p>
           <p>{this.props.userCommits} commits in the last 5 days</p>

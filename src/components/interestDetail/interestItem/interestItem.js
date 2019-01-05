@@ -41,10 +41,11 @@ class InterestItem extends React.Component {
     }
 
     return (
-      <div>
+      <div className='single-interest'>
         <p>{title}</p>
         <a href={link}>{link}</a>
         <img
+        className='delete-icon'
         src="https://cdn4.iconfinder.com/data/icons/devine_icons/Black/PNG/Folder%20and%20Places/Trash-Recyclebin-Empty-Closed.png"
         alt="delete"
         onClick={
