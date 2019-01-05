@@ -26,6 +26,7 @@ static propTypes = {
     .then(() => {
       githubApi.githubCommits(this.props.username).then((datas) => {
         datas.forEach(data => {
+          
           const time = new Date(data.created_at)
           const now = Date.now();
           if (data.type === 'PushEvent' && now-time <= 439488542) {
@@ -49,7 +50,7 @@ static propTypes = {
           userImage={this.state.ghUser.avatar_url}
           userBio={this.state.ghUser.bio}
           username={this.props.username}
-          userUrl={this.state.ghUser.url}
+          userUrl={this.state.ghUser.html_url}
           userCommits={this.state.commits}
           />
         </div>

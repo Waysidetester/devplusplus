@@ -25,7 +25,6 @@ class InterestDetail extends React.Component {
   }
   
   componentDidUpdate(prevProps, prevState) {
-    console.log('updated')
     if (prevProps !== this.props && prevState !== this.state) {
       const x = () => this.getTasks();
       window.setTimeout(x, 1000);

@@ -33,8 +33,9 @@ class addInterest extends React.Component {
 
   addTaskToDatabase = () => {
     if (this.state.newTask.title && this.state.newTask.link && this.state.newTask.type) {
-      fbApi.addTrackedItem(this.state.newTask)
-          this.props.updateInterest()
+      fbApi.addTrackedItem(this.state.newTask);
+      this.props.updateInterest();
+      this.setState({ newTask: defaultTask });
     } else {
       console.log('empty string');
     }
