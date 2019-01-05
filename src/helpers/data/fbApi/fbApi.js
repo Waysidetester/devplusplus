@@ -23,4 +23,26 @@ const updateTrackedItem = (key, item) => new Promise(() => {
     });
 });
 
-export default { getFBData, updateTrackedItem };
+const addTrackedItem = item => new Promise(() => {
+  axios.post(`https://devplusplus-fd23c.firebaseio.com/tracker.json`, item)
+    .catch((err) => {
+      console.error(err);
+    })
+})
+
+const deleteTrackedItem = key => new Promise((resolve, reject) => {
+  axios.delete(`https://devplusplus-fd23c.firebaseio.com/tracker/${key}.json`)
+    .then((res) => {
+      resolve(res);
+    })
+    .catch((err) => {
+      reject(err);
+    })
+  });
+
+export default {
+  getFBData,
+  updateTrackedItem,
+  addTrackedItem,
+  deleteTrackedItem,
+};

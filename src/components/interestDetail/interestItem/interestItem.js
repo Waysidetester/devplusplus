@@ -18,15 +18,17 @@ class InterestItem extends React.Component {
       link,
       isComplete,
       id,
+      type,
       updateIsComplete,
     } = this.props;
 
-    const completeEvent = (e) => {
+    const completeEvent = () => {
       const item = {
         title: title,
         link: link,
         isComplete: isComplete,
-      }
+        type: type,
+      };
 
       if (isComplete) {
         item.isComplete = false;
@@ -42,6 +44,15 @@ class InterestItem extends React.Component {
       <div>
         <p>{title}</p>
         <a href={link}>{link}</a>
+        <img
+        src="https://cdn4.iconfinder.com/data/icons/devine_icons/Black/PNG/Folder%20and%20Places/Trash-Recyclebin-Empty-Closed.png"
+        alt="delete"
+        onClick={
+          () => {
+          this.props.deletedState(this.props.id)
+        }
+        }
+        />
         <input type="checkbox" checked={isComplete} onChange={completeEvent}/>
       </div>
     );
