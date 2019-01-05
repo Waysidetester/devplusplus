@@ -25,7 +25,7 @@ class InterestDetail extends React.Component {
   }
   
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps !== this.props && prevState !== this.state) {
+    if (prevProps !== this.props || prevState !== this.state) {
       const x = () => this.getTasks();
       window.setTimeout(x, 1000);
     }

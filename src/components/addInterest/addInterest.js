@@ -36,6 +36,13 @@ class addInterest extends React.Component {
       fbApi.addTrackedItem(this.state.newTask);
       this.props.updateInterest();
       this.setState({ newTask: defaultTask });
+      document.getElementById('task').value = '';
+      document.getElementById('link').value = '';
+      for (let i = 0; i < document.getElementsByClassName('category').length; i++) {
+        document.getElementsByClassName('category')[i].checked = false;
+      }
+    
+
     } else {
       console.log('empty string');
     }
@@ -67,6 +74,7 @@ class addInterest extends React.Component {
           <FormGroup check>
               <Label check>
                 <Input
+                className='category'
                 type="radio"
                 name="radio1"
                 value="Tutorial"
@@ -78,6 +86,7 @@ class addInterest extends React.Component {
             <FormGroup check>
               <Label check>
                 <Input
+                className='category'
                 type="radio"
                 name="radio1"
                 value="Blog"
@@ -89,6 +98,7 @@ class addInterest extends React.Component {
             <FormGroup check>
               <Label check>
                 <Input
+                className='category'
                 type="radio"
                 name="radio1"
                 value="Resource"
@@ -100,6 +110,7 @@ class addInterest extends React.Component {
             <FormGroup check>
               <Label check>
                 <Input
+                className='category'
                 type="radio"
                 name="radio1"
                 value="Podcast"
